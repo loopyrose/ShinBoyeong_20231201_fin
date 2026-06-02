@@ -111,7 +111,6 @@ function eraser(){
 
 }
 
-
 function keyTyped() {
   if(key === '1'){
     sw =1
@@ -123,5 +122,40 @@ function keyTyped() {
     sw = 8
   } else if (key === '5') {
     sw = 16
+  }
+}
+
+function mousePressed() {
+  //상단
+  if (x>g*31 && x<g*31 && y>g && y<g*2) {
+    c = get(g*31,g,g,g);
+  }
+  if (x>g*32+g/2 && x<g*33+g/2 && y>g && y<g*2) {
+    c = get(g*32+g/2,g,g,g);
+  }
+  if (x>g*34 && x<g*35 && y>g && y<g*2) {
+    c = get(g*34,g,g,g);
+  }
+  if (x>g*35+g/2 && x<g*36+g/2 && y>g && y<g*2) {
+    c = get(g*35+g/2,g,g,g);
+  }
+  if (x>g*37 && x<g*38 && y>g && y<g*2) {
+    c = get(g*37,g,g,g);
+  }
+  //하단
+  if (x>g*31 && x<g*31 && y>g*2+g/2 && y<g*3+g/2) {
+    c = get(g*31,g*2+g/2,g,g);
+  }
+  if (x>g*32+g/2 && x<g*33+g/2 && y>g*2+g/2 && y<g*3+g/2) {
+    c = get(g*32+g/2,g*2+g/2,g,g);
+  }
+  if (x>g*34 && x<g*35 && y>g*2+g/2 && y<g*3+g/2) {
+    c = get(g*34,g*2+g/2,g,g);
+  }
+  if (x>g*35+g/2 && x<g*36+g/2 && y>g*2+g/2 && y<g*3+g/2) {
+    c = get(g*35+g/2,g*2+g/2,g,g);
+  }
+  if (x>g*37 && x<g*38 && y>g*2+g/2 && y<g*3+g/2) {
+    c = get(g*37,g*2+g/2,g,g);
   }
 }
