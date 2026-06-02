@@ -43,7 +43,7 @@ function draw() {
   }
   re_btn.mousePressed(recreate);
   save_btn.mousePressed(saveimage);
-  cam_btn.mousePressed(mode === 2);
+  cam_btn.mousePressed(camaraOn);
 }
 
 
@@ -63,6 +63,13 @@ function drawUI() {
 function recreate() {
   background(255);
 }
+function saveimage () {
+  save(get(),"edit_Image"+a+".jpg");
+  a++;
+}
+function cameraOn() {
+  img(cam,0,140,1024,768)
+}
 
 function drawing() {
   strokeWeight(sw);
@@ -74,7 +81,3 @@ function eraser() {
 
 }
 
-function saveimage () {
-  save(get(0,140,1024,768),"edit_Image"+a+".jpg");
-  a++;
-}
