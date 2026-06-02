@@ -99,7 +99,7 @@ function eraser() {
 
 }
 
-function keyPressed() {
+function keyTyped() {
   if(key === 1){
     sw =1
   } else if (key === 2) {
