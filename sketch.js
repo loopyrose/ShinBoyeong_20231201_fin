@@ -13,10 +13,6 @@ let cam;
 let mode;
 let a = 0;
 
-// function preload() {
-//   cam = createCapture(VIDEO);
-// }
-
 function setup() {
   createCanvas(1024,908);
   background(255);
@@ -26,7 +22,8 @@ function setup() {
   cam_btn = createButton('CAMERA')
   pen_btn = createButton('PEN')
   era_btn = createButton('ERASER')
-  // cam.hide();
+  cam = createCapture(VIDEO);
+  cam.hide();
   c = 0;
   sw = 1;
   mode = 0;
@@ -38,23 +35,18 @@ function setup() {
 
 function draw() {
 
-  if (mode === 0) {
-    if (mouseIsPressed) {
+  if (mode === 0 && mouseIsPressed) {
       drawing();
-    }
   } 
-  if (mode === 1) {
+  if (mode === 1 && mouseIsPressed) {
       eraser()
   } 
-  if (mode === 2 ) {
+  if (mode === 2 && mouseIsPressed) {
       image(get(0,140,1024,768),0,140,1024,768);
       mode = 0;
+      return;
   }
   drawUI();
-}
-
-function mousePressed() {
-    
 }
 
 
