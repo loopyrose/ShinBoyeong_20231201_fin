@@ -15,8 +15,10 @@ function setup() {
   
   re_btn = createButton('RECREATE');
   save_btn = createButton('SAVE');
-  // cam = createCapture(VIDEO);
-  // cam.hide();
+  cam_btn = createButton('CAMERA')
+  pen_btn = createButton('PEN')
+  era_btn = createButton('ERASER')
+
 
   c = 0;
   sw = 1;
@@ -24,17 +26,14 @@ function setup() {
 }
 
 function draw() {
-  drawUI();
-
-  if (mode === 0) {
-    if (mouseIsPressed) {
-      drawing();
-    }
+  if (mode === 0 && mouseIsPressed) {
+    drawing();
   } else if (mode === 1) {
-    
+    eraser();
   } else if (mode === 2 ) {
 
   }
+  drawUI();
   re_btn.mousePressed(recreate);
   save_btn.mousePressed(saveimage);
 }
@@ -44,15 +43,30 @@ function drawUI() {
   strokeWeight(1);
   fill(230);
   rect(0,0,1024,140);
-
+  //버튼
   re_btn.size(g*5,g*5);
   save_btn.size(g*5,g*5);
+  cam_btn.size(g*5,g*5);
+  pen_btn.size(g*5,g*2);
+  era_btn.size(g*5,g*2);
   re_btn.position(g,g);
   save_btn.position(g*7,g);
+  cam_btn.position(g*13,g);
+  pen_btn.position(g*19,g);
+  era_btn.position(g*19,g*4);
+  //색상 팔레트
+  fill(0);
+  rect(width*0.6,g,g,g);
+
 }
 
 function recreate() {
   background(255);
+}
+
+function saveimage () {
+  save(get(0,140,1024,768),"edit_Image"+a+".jpg");
+  a++;
 }
 
 function drawing() {
@@ -61,10 +75,10 @@ function drawing() {
   line(mouseX,mouseY,pmouseX,pmouseY);
 }
 
-function saveimage () {
-  save(get(0,140,1024,768),"edit_Image"+a+".jpg");
-  a++;
+function eraser(){
+
 }
+
 
 function keyTyped() {
   if(key === '1'){
