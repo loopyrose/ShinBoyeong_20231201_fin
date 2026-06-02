@@ -4,6 +4,7 @@ let g = 20;
 
 let re_btn;
 let save_btn;
+let cam_btn;
 let cam;
 
 let mode;
@@ -15,8 +16,9 @@ function setup() {
   
   re_btn = createButton('RECREATE');
   save_btn = createButton('SAVE');
-  // cam = createCapture(VIDEO);
-  // cam.hide();
+  cam_btn = createButton('CAMARA')
+  cam = createCapture(VIDEO);
+  cam.hide();
 
   c = 0;
   sw = 1;
@@ -31,12 +33,17 @@ function draw() {
       drawing();
     }
   } else if (mode === 1) {
-    
+    if (mouseIsPressed) {
+      eraser();
+    }
   } else if (mode === 2 ) {
-
+    if (mouseIsPressed) {
+      image(get(0,140,1024,768),0,140,1024,768);
+    }
   }
   re_btn.mousePressed(recreate);
   save_btn.mousePressed(saveimage);
+  cam_btn.mousePressed(mode === 2);
 }
 
 
@@ -48,6 +55,9 @@ function drawUI() {
   save_btn.size(g*5,g*5);
   re_btn.position(g,g);
   save_btn.position(g*7,g);
+
+  fill();
+  rect();
 }
 
 function recreate() {
@@ -58,6 +68,10 @@ function drawing() {
   strokeWeight(sw);
   stroke(c);
   line(mouseX,mouseY,pmouseX,pmouseY);
+}
+
+function eraser() {
+
 }
 
 function saveimage () {
