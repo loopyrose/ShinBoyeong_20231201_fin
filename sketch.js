@@ -22,6 +22,12 @@ function setup() {
   c = 0;
   sw = 1;
   mode = 0;
+  re_btn.mousePressed(recreate);
+  save_btn.mousePressed(saveimage);
+  // cam_btn.mouseIsPressed();
+  // pen_btn.mouseIsPressed();
+  // era_btn.mouseIsPressed();
+  // get_btn.mouseIsPressed();
 }
 
 function draw() {
@@ -29,12 +35,11 @@ function draw() {
     drawing();
   } else if (mode === 1) {
     eraser();
-  } else if (mode === 2 ) {
+  } else if (mode === 2) {
 
   }
   drawUI();
-  re_btn.mousePressed(recreate);
-  save_btn.mousePressed(saveimage);
+
 }
 
 
@@ -67,6 +72,16 @@ function drawUI() {
   rect(g*35+g/2,g,g,g);
   fill(255,255,0);
   rect(g*37,g,g,g);
+  fill(255);
+  rect(g*31,g*2+g/2,g,g);
+  fill(255,200,200);
+  rect(g*32+g/2,g*2+g/2,g,g);
+  fill(200,255,200);
+  rect(g*34,g*2+g/2,g,g);
+  fill(200,200,255);
+  rect(g*35+g/2,g*2+g/2,g,g);
+  fill(255,255,200);
+  rect(g*37,g*2+g/2,g,g);
 }
 
 function recreate() {
