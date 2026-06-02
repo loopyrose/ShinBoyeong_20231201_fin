@@ -53,8 +53,10 @@ function drawUI() {
 
   re_btn.size(g*5,g*5);
   save_btn.size(g*5,g*5);
+  cam_btn.size(g*5,g*5);
   re_btn.position(g,g);
   save_btn.position(g*7,g);
+  cam_btn.position(g*13,g);
 
   fill();
   rect();
