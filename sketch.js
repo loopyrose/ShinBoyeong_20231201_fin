@@ -46,6 +46,7 @@ function draw() {
 
 function drawUI() {
   strokeWeight(1);
+  stroke(0);
   fill(230);
   rect(0,0,1024,140);
   //버튼
@@ -85,6 +86,7 @@ function drawUI() {
   rect(g*37,g*2+g/2,g,g);
   //굵기 변경법
   fill(0);
+  noStroke();
   textSize(16)
   text("굵기 : 숫자키 1~5 변경",g*31,g*5+g/2);
   //현재 상태 안내
@@ -143,7 +145,7 @@ function mousePressed() {
     c = get(g*37,g);
   }
   //하단
-  if (mouseX>g*31 && mouseX<g*31 && mouseY>g*2+g/2 && mouseY<g*3+g/2) {
+  if (mouseX>g*31 && mouseX<g*32 && mouseY>g*2+g/2 && mouseY<g*3+g/2) {
     c = get(g*31,g*2+g/2);
   }
   if (mouseX>g*32+g/2 && mouseX<g*33+g/2 && mouseY>g*2+g/2 && mouseY<g*3+g/2) {
