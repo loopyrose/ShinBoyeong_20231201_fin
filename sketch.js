@@ -32,11 +32,11 @@ function setup() {
 }
 
 function draw() {
-  if (mode === "PEN" && mouseIsPressed) {
+  if (mode === 0 && mouseIsPressed) {
     drawing();
-  } else if (mode === "ERASER" && mouseIsPressed) {
+  } else if (mode === 1 && mouseIsPressed) {
     eraser();
-  } else if (mode === "COLORPICKER" && mouseIsPressed) {
+  } else if (mode === 2 && mouseIsPressed) {
     get();
   }
   drawUI();
