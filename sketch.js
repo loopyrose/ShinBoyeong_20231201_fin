@@ -34,15 +34,10 @@ function setup() {
 
 function draw() {
   drawUI();
-
-  re_btn.mousePressed(recreate);
-  save_btn.mousePressed(saveimage);
-  // cam_btn.mousePressed(cameraOn);
-}
-
-function mousePressed() {
-    if (mode === 0) {
+  if (mode === 0) {
+    if (mouseIsPressed) {
       drawing();
+    }
   } 
   if (mode === 1) {
       eraser()
@@ -51,6 +46,15 @@ function mousePressed() {
       image(get(0,140,1024,768),0,140,1024,768);
       mode = 0;
   }
+  
+
+  re_btn.mousePressed(recreate);
+  save_btn.mousePressed(saveimage);
+  // cam_btn.mousePressed(cameraOn);
+}
+
+function mousePressed() {
+    
 }
 
 
@@ -94,7 +98,7 @@ function drawing() {
   stroke(c);
   line(mouseX,mouseY,pmouseX,pmouseY);
 }
-
+1
 function eraser() {
 
 }
