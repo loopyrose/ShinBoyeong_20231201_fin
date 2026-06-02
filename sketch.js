@@ -30,10 +30,14 @@ function setup() {
   c = 0;
   sw = 1;
   mode = 0;
+
+  re_btn.mousePressed(recreate);
+  save_btn.mousePressed(saveimage);
+  cam_btn.mousePressed(cameraOn);
 }
 
 function draw() {
-  drawUI();
+
   if (mode === 0) {
     if (mouseIsPressed) {
       drawing();
@@ -46,11 +50,7 @@ function draw() {
       image(get(0,140,1024,768),0,140,1024,768);
       mode = 0;
   }
-  
-
-  re_btn.mousePressed(recreate);
-  save_btn.mousePressed(saveimage);
-  // cam_btn.mousePressed(cameraOn);
+  drawUI();
 }
 
 function mousePressed() {
@@ -88,31 +88,31 @@ function saveimage () {
   a++;
 }
 
-// function cameraOn() {
-//   img(cam,0,140,1024,768)
-//   mode = 2;
-// }
+function cameraOn() {
+  image(cam,0,140,1024,768)
+  mode = 2;
+}
 
 function drawing() {
   strokeWeight(sw);
   stroke(c);
   line(mouseX,mouseY,pmouseX,pmouseY);
 }
-1
+
 function eraser() {
 
 }
 
 function keyTyped() {
-  if(key === 1){
+  if(key === '1'){
     sw =1
-  } else if (key === 2) {
+  } else if (key === '2') {
     sw = 2
-  } else if (key === 3) {
+  } else if (key === '3') {
     sw = 4
-  } else if (key === 4) {
+  } else if (key === '4') {
     sw = 8
-  } else if (key === 5) {
+  } else if (key === '5') {
     sw = 16
   }
 }
