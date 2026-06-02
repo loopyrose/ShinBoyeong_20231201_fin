@@ -5,23 +5,24 @@ let g = 20;
 let re_btn, save_btn, cam_btn, pen_btn, era_btn, get_btn;
 let cam;
 
-let mode;
+const modes = ["PEN", "ERASER", "COLORPICKER", "CAMERA"];
+let mode
 let a = 0;
 
 function setup() {
   createCanvas(1024,908);
   background(10);
   
-  re_btn = createButton('RECREATE');
-  save_btn = createButton('SAVE');
-  cam_btn = createButton('CAMERA')
-  pen_btn = createButton('PEN')
-  era_btn = createButton('ERASER')
-  get_btn = createButton('ColorPicker')
+  re_btn = createButton('새로시작하기');
+  save_btn = createButton('저장하기');
+  cam_btn = createButton('카메라')
+  pen_btn = createButton('펜')
+  era_btn = createButton('지우개')
+  get_btn = createButton('스포이드')
 
   c = 0;
   sw = 1;
-  mode = 0;
+  mode = "PEN";
   re_btn.mousePressed(recreate);
   save_btn.mousePressed(saveimage);
   // cam_btn.mouseIsPressed();
@@ -31,12 +32,12 @@ function setup() {
 }
 
 function draw() {
-  if (mode === 0 && mouseIsPressed) {
+  if (mode === "PEN" && mouseIsPressed) {
     drawing();
-  } else if (mode === 1) {
+  } else if (mode === "ERASER" && mouseIsPressed) {
     eraser();
-  } else if (mode === 2) {
-
+  } else if (mode === "COLORPICKER" && mouseIsPressed) {
+    get();
   }
   drawUI();
 
@@ -87,7 +88,7 @@ function drawUI() {
   textSize(16)
   text("굵기 : 숫자키 1~5 변경",g*31,g*5+g/2);
   //현재 상태 안내
-  text("모드 : ",g*40,70);
+  text("모드 : " + mode ,g*40,70);
 }
 
 function recreate() {
