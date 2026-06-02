@@ -10,18 +10,18 @@ let cam;
 let mode;
 let a = 0;
 
-function preload() {
-  cam = createCapture(VIDEO);
-}
+// function preload() {
+//   cam = createCapture(VIDEO);
+// }
 
 function setup() {
   createCanvas(1024,908);
-  background(10);
+  background(255);
   
   re_btn = createButton('RECREATE');
   save_btn = createButton('SAVE');
   cam_btn = createButton('CAMERA')
-  cam.hide();
+  // cam.hide();
   c = 0;
   sw = 1;
   mode = 0;
@@ -34,19 +34,20 @@ function draw() {
     if (mouseIsPressed) {
       drawing();
     }
-  } else if (mode === 1) {
-    if (mouseIsPressed) {
-      eraser();
-    }
-  } else if (mode === 2 ) {
-    if (mouseIsPressed) {
-      image(get(0,140,1024,768),0,140,1024,768);
-      mode = 0;
-    }
   }
+  // } else if (mode === 1) {
+  //   if (mouseIsPressed) {
+  //     eraser();
+  //   }
+  // } else if (mode === 2 ) {
+  //   if (mouseIsPressed) {
+  //     image(get(0,140,1024,768),0,140,1024,768);
+  //     mode = 0;
+  //   }
+  // }
   re_btn.mousePressed(recreate);
   save_btn.mousePressed(saveimage);
-  cam_btn.mousePressed(cameraOn);
+  // cam_btn.mousePressed(cameraOn);
 }
 
 
@@ -68,13 +69,16 @@ function drawUI() {
 function recreate() {
   background(255);
 }
+
 function saveimage () {
   save(get(),"edit_Image"+a+".jpg");
   a++;
 }
-function cameraOn() {
-  img(cam,0,140,1024,768)
-}
+
+// function cameraOn() {
+//   img(cam,0,140,1024,768)
+//   mode = 2;
+// }
 
 function drawing() {
   strokeWeight(sw);
@@ -84,5 +88,19 @@ function drawing() {
 
 function eraser() {
 
+}
+
+function keyPressed() {
+  if(key === 1){
+    sw =1
+  } else if (key === 2) {
+    sw = 2
+  } else if (key === 3) {
+    sw = 4
+  } else if (key === 4) {
+    sw = 8
+  } else if (key === 5) {
+    sw = 16
+  }
 }
 
