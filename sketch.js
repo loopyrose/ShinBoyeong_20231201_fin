@@ -5,6 +5,9 @@ let g = 20;
 let re_btn;
 let save_btn;
 let cam_btn;
+let pen_btn;
+let era_btn;
+
 let cam;
 
 let mode;
@@ -21,6 +24,8 @@ function setup() {
   re_btn = createButton('RECREATE');
   save_btn = createButton('SAVE');
   cam_btn = createButton('CAMERA')
+  pen_btn = createButton('PEN')
+  era_btn = createButton('ERASER')
   // cam.hide();
   c = 0;
   sw = 1;
@@ -30,24 +35,22 @@ function setup() {
 function draw() {
   drawUI();
 
-  if (mode === 0) {
-    if (mouseIsPressed) {
-      drawing();
-    }
-  }
-  // } else if (mode === 1) {
-  //   if (mouseIsPressed) {
-  //     eraser();
-  //   }
-  // } else if (mode === 2 ) {
-  //   if (mouseIsPressed) {
-  //     image(get(0,140,1024,768),0,140,1024,768);
-  //     mode = 0;
-  //   }
-  // }
   re_btn.mousePressed(recreate);
   save_btn.mousePressed(saveimage);
   // cam_btn.mousePressed(cameraOn);
+}
+
+function mousePressed() {
+    if (mode === 0) {
+      drawing();
+  } 
+  if (mode === 1) {
+      eraser()
+  } 
+  if (mode === 2 ) {
+      image(get(0,140,1024,768),0,140,1024,768);
+      mode = 0;
+  }
 }
 
 
@@ -55,13 +58,19 @@ function drawUI() {
   fill(230);
   rect(0,0,1024,140);
 
+  //버튼 사이즈
   re_btn.size(g*5,g*5);
   save_btn.size(g*5,g*5);
   cam_btn.size(g*5,g*5);
+  pen_btn.size(g*5,g*2);
+  era_btn.size(g*5,g*2);
   re_btn.position(g,g);
   save_btn.position(g*7,g);
   cam_btn.position(g*13,g);
-
+  pen_btn.position(g*19,g);
+  era_btn.position(g*19,g*4);
+  
+  //색상 팔레트
   fill();
   rect();
 }
