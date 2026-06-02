@@ -2,8 +2,7 @@ let c;
 let sw;
 let g = 20;
 
-let re_btn;
-let save_btn;
+let re_btn, save_btn, cam_btn, pen_btn, era_btn, get_btn;
 let cam;
 
 let mode;
@@ -18,7 +17,7 @@ function setup() {
   cam_btn = createButton('CAMERA')
   pen_btn = createButton('PEN')
   era_btn = createButton('ERASER')
-
+  get_btn = createButton('ColorPicker')
 
   c = 0;
   sw = 1;
@@ -49,15 +48,25 @@ function drawUI() {
   cam_btn.size(g*5,g*5);
   pen_btn.size(g*5,g*2);
   era_btn.size(g*5,g*2);
+  era_btn.size(g*5,g*2);
+  get_btn.size(g*5,g*5);
   re_btn.position(g,g);
   save_btn.position(g*7,g);
   cam_btn.position(g*13,g);
   pen_btn.position(g*19,g);
   era_btn.position(g*19,g*4);
+  get_btn.position(g*25,g);
   //색상 팔레트
   fill(0);
-  rect(width*0.6,g,g,g);
-
+  rect(g*31,g,g,g);
+  fill(255,0,0);
+  rect(g*32+g/2,g,g,g);
+  fill(0,255,0);
+  rect(g*34,g,g,g);
+  fill(0,0,255);
+  rect(g*35+g/2,g,g,g);
+  fill(255,255,0);
+  rect(g*37,g,g,g);
 }
 
 function recreate() {
