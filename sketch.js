@@ -82,10 +82,12 @@ function drawUI() {
   rect(g*35+g/2,g*2+g/2,g,g);
   fill(255,255,200);
   rect(g*37,g*2+g/2,g,g);
-  //현재 상태 표시
+  //굵기 변경법
   fill(0);
-  textSize(15)
+  textSize(16)
   text("굵기 : 숫자키 1~5 변경",g*31,g*5+g/2);
+  //현재 상태 안내
+  text("모드 : ",g*40,70);
 }
 
 function recreate() {
