@@ -5,8 +5,8 @@ let g = 20;
 let re_btn, save_btn, cam_btn, pen_btn, era_btn, get_btn;
 let cam;
 
-const modes = ["PEN", "ERASER", "COLORPICKER", "CAMERA"];
-let mode
+const modes = ["펜", "지우개", "스포이드", "카메라"];
+let mode;
 let a = 0;
 
 function setup() {
@@ -22,7 +22,7 @@ function setup() {
 
   c = 0;
   sw = 1;
-  mode = "PEN";
+  mode = 0;
   re_btn.mousePressed(recreate);
   save_btn.mousePressed(saveimage);
   // cam_btn.mouseIsPressed();
@@ -88,7 +88,8 @@ function drawUI() {
   textSize(16)
   text("굵기 : 숫자키 1~5 변경",g*31,g*5+g/2);
   //현재 상태 안내
-  text("모드 : " + mode ,g*40,70);
+  textSize(24)
+  text("모드 : " + modes[mode] ,g*40,70);
 }
 
 function recreate() {
