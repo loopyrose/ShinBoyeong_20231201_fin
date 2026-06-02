@@ -10,16 +10,18 @@ let cam;
 let mode;
 let a = 0;
 
+function preload() {
+  cam = createCapture(VIDEO);
+}
+
 function setup() {
   createCanvas(1024,908);
   background(10);
   
   re_btn = createButton('RECREATE');
   save_btn = createButton('SAVE');
-  cam_btn = createButton('CAMARA')
-  cam = createCapture(VIDEO);
+  cam_btn = createButton('CAMERA')
   cam.hide();
-
   c = 0;
   sw = 1;
   mode = 0;
@@ -39,11 +41,12 @@ function draw() {
   } else if (mode === 2 ) {
     if (mouseIsPressed) {
       image(get(0,140,1024,768),0,140,1024,768);
+      mode = 0;
     }
   }
   re_btn.mousePressed(recreate);
   save_btn.mousePressed(saveimage);
-  cam_btn.mousePressed(camaraOn);
+  cam_btn.mousePressed(cameraOn);
 }
 
 
