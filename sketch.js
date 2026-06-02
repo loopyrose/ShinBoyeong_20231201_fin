@@ -127,35 +127,35 @@ function keyTyped() {
 
 function mousePressed() {
   //상단
-  if (x>g*31 && x<g*32 && y>g && y<g*2) {
+  if (mouseX>g*31 && mouseX<g*32 && mouseY>g && mouseY<g*2) {
     c = get(g*31,g);
   }
-  if (x>g*32+g/2 && x<g*33+g/2 && y>g && y<g*2) {
+  if (mouseX>g*32+g/2 && mouseX<g*33+g/2 && mouseY>g && mouseY<g*2) {
     c = get(g*32+g/2,g);
   }
-  if (x>g*34 && x<g*35 && y>g && y<g*2) {
+  if (mouseX>g*34 && mouseX<g*35 && mouseY>g && mouseY<g*2) {
     c = get(g*34,g);
   }
-  if (x>g*35+g/2 && x<g*36+g/2 && y>g && y<g*2) {
+  if (mouseX>g*35+g/2 && mouseX<g*36+g/2 && mouseY>g && mouseY<g*2) {
     c = get(g*35+g/2,g);
   }
-  if (x>g*37 && x<g*38 && y>g && y<g*2) {
+  if (mouseX>g*37 && mouseX<g*38 && mouseY>g && mouseY<g*2) {
     c = get(g*37,g);
   }
   //하단
-  if (x>g*31 && x<g*31 && y>g*2+g/2 && y<g*3+g/2) {
+  if (mouseX>g*31 && mouseX<g*31 && mouseY>g*2+g/2 && mouseY<g*3+g/2) {
     c = get(g*31,g*2+g/2);
   }
-  if (x>g*32+g/2 && x<g*33+g/2 && y>g*2+g/2 && y<g*3+g/2) {
+  if (mouseX>g*32+g/2 && mouseX<g*33+g/2 && mouseY>g*2+g/2 && mouseY<g*3+g/2) {
     c = get(g*32+g/2,g*2+g/2);
   }
-  if (x>g*34 && x<g*35 && y>g*2+g/2 && y<g*3+g/2) {
+  if (mouseX>g*34 && mouseX<g*35 && mouseY>g*2+g/2 && mouseY<g*3+g/2) {
     c = get(g*34,g*2+g/2);
   }
-  if (x>g*35+g/2 && x<g*36+g/2 && y>g*2+g/2 && y<g*3+g/2) {
+  if (mouseX>g*35+g/2 && mouseX<g*36+g/2 && mouseY>g*2+g/2 && mouseY<g*3+g/2) {
     c = get(g*35+g/2,g*2+g/2);
   }
-  if (x>g*37 && x<g*38 && y>g*2+g/2 && y<g*3+g/2) {
+  if (mouseX>g*37 && mouseX<g*38 && mouseY>g*2+g/2 && mouseY<g*3+g/2) {
     c = get(g*37,g*2+g/2);
   }
 }
