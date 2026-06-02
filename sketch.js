@@ -13,7 +13,7 @@ function setup() {
   createCanvas(1024,908);
   background(10);
   
-  re_btn = createButton('새로시작하기');
+  re_btn = createButton('새로 시작하기');
   save_btn = createButton('저장하기');
   cam_btn = createButton('카메라')
   pen_btn = createButton('펜')
@@ -38,9 +38,10 @@ function draw() {
     eraser();
   } else if (mode === 2 && mouseIsPressed) {
     get();
+  } else if (mode === 3 && mouseIsPressed) {
+
   }
   drawUI();
-
 }
 
 
