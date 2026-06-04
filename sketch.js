@@ -44,7 +44,6 @@ function draw() {
   drawUI();
 }
 
-//버튼 함수
 function drawUI() {
   strokeWeight(1);
   stroke(0);
@@ -95,6 +94,7 @@ function drawUI() {
   text("모드 : " + modes[mode] ,g*40,70);
 }
 
+//버튼 함수
 function reCreate() {
   background(255);
 }
@@ -134,7 +134,7 @@ function getColor() {
 }
 
 function captureCam(){
-
+  
 }
 
 function keyTyped() {
