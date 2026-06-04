@@ -25,10 +25,10 @@ function setup() {
   mode = 0;
   re_btn.mousePressed(reCreate);
   save_btn.mousePressed(saveImage);
-  cam_btn.mouseIsPressed(changeModeC);
-  pen_btn.mouseIsPressed(changeModeD);
-  era_btn.mouseIsPressed(changeModeE);
-  get_btn.mouseIsPressed(changeModeG);
+  // cam_btn.mouseIsPressed();
+  // pen_btn.mouseIsPressed();
+  // era_btn.mouseIsPressed();
+  get_btn.mouseIsPressed();
 }
 
 function draw() {
@@ -99,26 +99,13 @@ function reCreate() {
   background(255);
 }
 
-function saveImage() {
+function saveImage () {
   save(get(0,140,1024,768),"edit_Image"+a+".jpg");
   a++;
 }
 
-function changeModeD() {
-  mode = 0;
-} 
-
-function changeModeE() {
-  mode = 1;
-}
-
-function changeModeG() {
-  mode = 2;
-}
-
-
-function changeModeC() {
-  mode = 3;
+function changeMode (modeNum) {
+  
 }
 
 function drawing() {
