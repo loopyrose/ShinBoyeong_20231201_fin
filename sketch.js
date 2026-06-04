@@ -116,6 +116,7 @@ function changeModeG() {
   mode = 2;
 }
 
+
 function changeModeC() {
   mode = 3;
 }
