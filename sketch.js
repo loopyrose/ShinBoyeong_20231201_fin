@@ -36,9 +36,9 @@ function draw() {
     drawing();
   } else if (mode === 1 && mouseIsPressed) {
     eraser();
-  } else if (mode === 2 && mouseIsPressed) {
+  } else if (mode === 2 && mouseIsPressed && mouseY>140) {
     getColor();
-  } else if (mode === 3 && mouseIsPressed && mouseY<140) {
+  } else if (mode === 3 && mouseIsPressed && mouseY>140) {
     captureCam();
   }
   drawUI();
@@ -129,7 +129,7 @@ function eraser() {
 }
 
 function getColor() {
-  get(mouseX, mouseY);
+  c = get(mouseX, mouseY);
   mode = 0;
 }
 
