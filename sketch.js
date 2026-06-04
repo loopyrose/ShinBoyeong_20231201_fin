@@ -23,12 +23,12 @@ function setup() {
   c = 0;
   sw = 1;
   mode = 0;
-  re_btn.mousePressed(recreate);
-  save_btn.mousePressed(saveimage);
-  // cam_btn.mouseIsPressed();
-  // pen_btn.mouseIsPressed();
-  // era_btn.mouseIsPressed();
-  // get_btn.mouseIsPressed();
+  re_btn.mousePressed(reCreate);
+  save_btn.mousePressed(saveImage);
+  cam_btn.mouseIsPressed(changeModeC);
+  pen_btn.mouseIsPressed(changeModeD);
+  era_btn.mouseIsPressed(changeModeE);
+  get_btn.mouseIsPressed(changeModeG);
 }
 
 function draw() {
@@ -37,7 +37,7 @@ function draw() {
   } else if (mode === 1 && mouseIsPressed) {
     eraser();
   } else if (mode === 2 && mouseIsPressed) {
-    get();
+    getColor();
   } else if (mode === 3 && mouseIsPressed) {
 
   }
@@ -95,13 +95,29 @@ function drawUI() {
   text("모드 : " + modes[mode] ,g*40,70);
 }
 
-function recreate() {
+function reCreate() {
   background(255);
 }
 
-function saveimage () {
+function saveImage() {
   save(get(0,140,1024,768),"edit_Image"+a+".jpg");
   a++;
+}
+
+function changeModeD() {
+  mode = 0;
+} 
+
+function changeModeE() {
+  mode = 1;
+}
+
+function changeModeG() {
+  mode = 2;
+}
+
+function changeModeC() {
+  mode = 3;
 }
 
 function drawing() {
@@ -110,7 +126,11 @@ function drawing() {
   line(mouseX,mouseY,pmouseX,pmouseY);
 }
 
-function eraser(){
+function eraser() {
+
+}
+
+function getColor() {
 
 }
 
