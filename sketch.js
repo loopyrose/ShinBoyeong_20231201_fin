@@ -44,7 +44,7 @@ function draw() {
   drawUI();
 }
 
-
+//버튼 함수
 function drawUI() {
   strokeWeight(1);
   stroke(0);
@@ -107,19 +107,17 @@ function saveImage () {
 function changeModeD () {
   mode = 0;
 }
-
 function changeModeE () {
   mode = 1;
 }
-
 function changeModeG () {
   mode = 2;
 }
-
 function changeModeC () {
   mode = 3;
 }
 
+//기능 함수
 function drawing() {
   strokeWeight(sw);
   stroke(c);
@@ -131,7 +129,8 @@ function eraser() {
 }
 
 function getColor() {
-
+  get(mouseX, mouseY);
+  mode = 0;
 }
 
 function keyTyped() {
