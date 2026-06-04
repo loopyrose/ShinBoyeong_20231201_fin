@@ -25,10 +25,11 @@ function setup() {
   mode = 0;
   re_btn.mousePressed(reCreate);
   save_btn.mousePressed(saveImage);
-  // cam_btn.mouseIsPressed();
-  // pen_btn.mouseIsPressed();
-  // era_btn.mouseIsPressed();
-  get_btn.mouseIsPressed();
+
+  pen_btn.mouseIsPressed(changeMode(0));
+  era_btn.mouseIsPressed(changeMode(1));
+  get_btn.mouseIsPressed(changeMode(2));
+  cam_btn.mouseIsPressed(changeMode(3));
 }
 
 function draw() {
@@ -105,7 +106,7 @@ function saveImage () {
 }
 
 function changeMode (modeNum) {
-  
+  mode = modeNum;
 }
 
 function drawing() {
