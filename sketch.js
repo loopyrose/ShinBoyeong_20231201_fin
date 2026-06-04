@@ -90,8 +90,13 @@ function drawUI() {
   textSize(16)
   text("굵기 : 숫자키 1~5 변경",g*31,g*5+g/2);
   //현재 상태 안내
-  textSize(24)
-  text("모드 : " + modes[mode] ,g*40,70);
+  fill(c);
+  rect(g*40,g,g*3,g*3);
+  fill(0);
+  text("현재 색상",g*40,g*5+g/2);
+  textSize(22)
+  text("모드 : " + modes[mode] ,g*44,70);
+  
 }
 
 //버튼 함수
