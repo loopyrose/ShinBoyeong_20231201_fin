@@ -38,8 +38,8 @@ function draw() {
     eraser();
   } else if (mode === 2 && mouseIsPressed) {
     getColor();
-  } else if (mode === 3 && mouseIsPressed) {
-
+  } else if (mode === 3 && mouseIsPressed && mouseY<140) {
+    captureCam();
   }
   drawUI();
 }
@@ -131,6 +131,10 @@ function eraser() {
 function getColor() {
   get(mouseX, mouseY);
   mode = 0;
+}
+
+function captureCam(){
+
 }
 
 function keyTyped() {
