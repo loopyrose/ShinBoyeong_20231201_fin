@@ -1,13 +1,13 @@
 let c;
 let sw;
 let g = 20;
+let a = 0;
 
 let re_btn, save_btn, cam_btn, pen_btn, era_btn, get_btn;
 let cam;
 
 const modes = ["펜", "지우개", "스포이드", "카메라"];
 let mode;
-let a = 0;
 
 function setup() {
   createCanvas(1024,908);
