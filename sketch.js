@@ -11,7 +11,7 @@ let a = 0;
 
 function setup() {
   createCanvas(1024,908);
-  background(10);
+  background(255);
   
   re_btn = createButton('새로 시작하기');
   save_btn = createButton('저장하기');
@@ -38,7 +38,7 @@ function draw() {
     eraser();
   } else if (mode === 2 && mouseIsPressed && mouseY>140) {
     getColor();
-  } else if (mode === 3 && mouseIsPressed && mouseY>140) {
+  } else if (mode === 3 && mouseIsPressed) {
     captureCam();
   }
   drawUI();
@@ -134,7 +134,7 @@ function getColor() {
 }
 
 function captureCam(){
-  
+
 }
 
 function keyTyped() {
