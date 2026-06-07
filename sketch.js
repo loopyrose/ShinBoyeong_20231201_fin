@@ -4,8 +4,7 @@ let g = 20;
 let a = 0;
 
 let re_btn, save_btn, cam_btn, pen_btn, era_btn, get_btn;
-let cam;
-let captureImg;
+let cam, captureImg;
 
 const modes = ["펜", "지우개", "스포이드", "카메라"];
 let mode;
@@ -13,8 +12,9 @@ let mode;
 function setup() {
   createCanvas(1024,908);
   background(255);
-  cam=createCapture(VIDEO);
+  cam = createCapture(VIDEO);
   cam.hide();
+  captureImg = get(0,140,1024,768);
   
   re_btn = createButton('새로 시작하기');
   save_btn = createButton('저장하기');
@@ -106,6 +106,7 @@ function drawUI() {
 //버튼 함수
 function reCreate() {
   background(255);
+  captureImg = get(0,140,1024,768);
 }
 
 function saveImage () {
@@ -134,7 +135,12 @@ function drawing() {
 }
 
 function eraser() {
+  let col = captureImg.get(mouseX, mouseY-140);
 
+  stroke(col);
+  strokeWeight(sw);
+
+  line(mouseX, mouseY, pmouseX, pmouseY);
 }
 
 function getColor() {
