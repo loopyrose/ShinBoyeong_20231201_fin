@@ -135,10 +135,10 @@ function drawing() {
 }
 
 function eraser() {
-  let col = captureImg.get(mouseX, mouseY-140);
+  let col = captureImg.get(mouseX, mouseY,sw,sw);
 
   stroke(col);
-  strokeWeight(sw);
+  strokeWeight(sw*sw);
 
   line(mouseX, mouseY, pmouseX, pmouseY);
 }
