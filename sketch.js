@@ -5,6 +5,7 @@ let a = 0;
 
 let re_btn, save_btn, cam_btn, pen_btn, era_btn, get_btn;
 let cam;
+let captureImg;
 
 const modes = ["펜", "지우개", "스포이드", "카메라"];
 let mode;
@@ -34,6 +35,7 @@ function setup() {
 }
 
 function draw() {
+
   if (mode === 0 && mouseIsPressed) {
     drawing();
   } else if (mode === 1 && mouseIsPressed) {
@@ -42,9 +44,6 @@ function draw() {
     getColor();
   } else if (mode === 3) {
     image(cam,0,140,1024,768);
-    if(mouseIsPressed && mouseY>140){
-      captureCam();
-    }
   }
   drawUI();
 }
@@ -144,8 +143,8 @@ function getColor() {
 }
 
 function captureCam(){
-  cam.pause();
-  image(get(0,140,1024,768),0,140,1024,768);
+  captureImg = cam.get();
+  image(captureImg,0,140,1024,768);
   mode=0;
 }
 
@@ -195,5 +194,9 @@ function mousePressed() {
   }
   if (mouseX>g*37 && mouseX<g*38 && mouseY>g*2+g/2 && mouseY<g*3+g/2) {
     c = get(g*37,g*2+g/2);
+  }
+  //카메라 작동
+  if(mode===3 && mouseY>140){
+      captureCam();
   }
 }
