@@ -145,7 +145,7 @@ function getColor() {
 
 function captureCam(){
   cam.pause();
-  image(get(),0,140,1024,768);
+  image(get(0,140,1024,768),0,140,1024,768);
   mode=0;
 }
 
