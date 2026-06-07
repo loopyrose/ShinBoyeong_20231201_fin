@@ -12,7 +12,7 @@ let mode;
 function setup() {
   createCanvas(1024,908);
   background(255);
-  cam=createVideo(VIDEO);
+  cam=createCapture(VIDEO);
   cam.hide();
   
   re_btn = createButton('새로 시작하기');
