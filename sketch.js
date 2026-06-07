@@ -135,12 +135,9 @@ function drawing() {
 }
 
 function eraser() {
-  let col = captureImg.get(mouseX, mouseY,sw,sw);
+  let eraserArea = captureImg.get(mouseX, mouseY-140,sw,sw);
 
-  stroke(col);
-  strokeWeight(sw*sw);
-
-  line(mouseX, mouseY, pmouseX, pmouseY);
+  image(eraserArea, mouseX-sw/2, mouseY-sw/2, sw, sw);
 }
 
 function getColor() {
