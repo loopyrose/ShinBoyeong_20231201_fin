@@ -148,6 +148,8 @@ function getColor() {
 function captureCam(){
   captureImg = cam.get();
   image(captureImg,0,140,1024,768);
+  print(captureImg.width);
+  print(captureImg.height); 
   mode=0;
 }
 
