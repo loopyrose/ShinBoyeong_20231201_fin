@@ -135,9 +135,9 @@ function drawing() {
 }
 
 function eraser() {
-  let eraserArea = captureImg.get(mouseX, mouseY-140,sw,sw);
+  let eraserArea = captureImg.get(mouseX, mouseY-140,sw*4,sw*4);
 
-  image(eraserArea, mouseX-sw/2, mouseY-sw/2, sw, sw);
+  image(eraserArea, mouseX-sw/2, mouseY-sw/2, sw*4, sw*4);
 }
 
 function getColor() {
@@ -147,9 +147,8 @@ function getColor() {
 
 function captureCam(){
   captureImg = cam.get();
+  captureImg.resize(1024,768);
   image(captureImg,0,140,1024,768);
-  print(captureImg.width);
-  print(captureImg.height); 
   mode=0;
 }
 
