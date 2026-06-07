@@ -12,6 +12,8 @@ let mode;
 function setup() {
   createCanvas(1024,908);
   background(255);
+  cam=createVideo(VIDEO);
+  cam.hide();
   
   re_btn = createButton('새로 시작하기');
   save_btn = createButton('저장하기');
@@ -38,8 +40,11 @@ function draw() {
     eraser();
   } else if (mode === 2 && mouseIsPressed && mouseY>140) {
     getColor();
-  } else if (mode === 3 && mouseIsPressed) {
-    captureCam();
+  } else if (mode === 3) {
+    image(cam,0,140,1024,768);
+    if(mouseIsPressed && mouseY>140){
+      captureCam();
+    }
   }
   drawUI();
 }
@@ -139,7 +144,9 @@ function getColor() {
 }
 
 function captureCam(){
-
+  cam.pause();
+  image(get(),0,140,1024,768);
+  mode=0;
 }
 
 function keyTyped() {
